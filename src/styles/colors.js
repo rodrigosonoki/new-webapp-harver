@@ -1,5 +1,6 @@
 export const colors = {
   background: "#F0F0F7",
+  headerBackground: "#303030",
   primaryLighter: "#f27f81",
   primaryLight: "#f1787a",
   primary: "#f17174",
@@ -8,7 +9,8 @@ export const colors = {
   secondary: "#00CEEC",
   secondaryDark: "#00c3e0",
   title: "#fff",
-  text: "#D4C2FF",
+  text: "#565867",
+  textInvert: "#fff",
   textTitle: "#32264D",
   textComplement: "#9c98a6",
   textBase: "#6a6180",

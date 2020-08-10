@@ -9,18 +9,8 @@ export default createGlobalStyle`
     box-sizing: border-box;
 }
 
-html, body, #root {
-    height: 100vh
-}
-
 body {
     background: ${colors.background}
-}
-
-#root {
-    display: flex;
-    align-items: center;
-    justify-content: center
 }
 
 body, input, button, textarea {

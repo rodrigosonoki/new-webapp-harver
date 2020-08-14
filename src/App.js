@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
+import usePersistedState from "./utils/usePersistedState";
 
 //GLOBAL STYLE
 import GlobalStyle from "./styles/global";
@@ -12,7 +13,7 @@ import Routes from "./routes";
 import light from "./styles/themes/light";
 
 function App() {
-  const [theme] = useState(light);
+  const [theme] = usePersistedState("theme", light);
 
   return (
     <>

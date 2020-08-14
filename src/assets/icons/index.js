@@ -4,5 +4,6 @@ import feedback from "./feedback.svg";
 import logout from "./logout.svg";
 import store from "./store.svg";
 import user from "./user.svg";
+import search from "./search.svg";
 
-export { bell, circle, feedback, user, store, logout };
+export { bell, circle, feedback, user, store, logout, search };

@@ -17,4 +17,12 @@ body, input, button, textarea {
     font: 400 16px Poppins;
 }
 
+a {
+    text-decoration: none;
+}
+
+
+
+
+
 `;

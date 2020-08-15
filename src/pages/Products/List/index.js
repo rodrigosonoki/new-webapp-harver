@@ -13,7 +13,7 @@ import { useFilter } from "../../../store/useFilter";
 const products = [
   {
     id: 1,
-    name: "Aaa",
+    name: "Aaaa",
     price: "R$49.99",
     image:
       "https://mockup-api.teespring.com/v3/image/WGs_HCKH5pEL8Gr_yp4LstbXjkw/480/560.jpg",
@@ -27,6 +27,48 @@ const products = [
   },
   {
     id: 3,
+    name: "Abb",
+    price: "R$49.99",
+    image:
+      "https://mockup-api.teespring.com/v3/image/WGs_HCKH5pEL8Gr_yp4LstbXjkw/480/560.jpg",
+  },
+  {
+    id: 4,
+    name: "Aaa",
+    price: "R$49.99",
+    image:
+      "https://mockup-api.teespring.com/v3/image/WGs_HCKH5pEL8Gr_yp4LstbXjkw/480/560.jpg",
+  },
+  {
+    id: 5,
+    name: "Aab",
+    price: "R$49.99",
+    image:
+      "https://mockup-api.teespring.com/v3/image/WGs_HCKH5pEL8Gr_yp4LstbXjkw/480/560.jpg",
+  },
+  {
+    id: 6,
+    name: "Abb",
+    price: "R$49.99",
+    image:
+      "https://mockup-api.teespring.com/v3/image/WGs_HCKH5pEL8Gr_yp4LstbXjkw/480/560.jpg",
+  },
+  {
+    id: 7,
+    name: "Aaa",
+    price: "R$49.99",
+    image:
+      "https://mockup-api.teespring.com/v3/image/WGs_HCKH5pEL8Gr_yp4LstbXjkw/480/560.jpg",
+  },
+  {
+    id: 8,
+    name: "Aab",
+    price: "R$49.99",
+    image:
+      "https://mockup-api.teespring.com/v3/image/WGs_HCKH5pEL8Gr_yp4LstbXjkw/480/560.jpg",
+  },
+  {
+    id: 9,
     name: "Abb",
     price: "R$49.99",
     image:

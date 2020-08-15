@@ -45,11 +45,6 @@ export const Content = styled.div`
     transition: 0.3s;
     cursor: pointer;
 
-    &:hover {
-      background-color: ${(props) => props.theme.colors.secondaryButtonHover};
-      transition: 0.3s;
-    }
-
     img {
       margin-right: 8px;
     }

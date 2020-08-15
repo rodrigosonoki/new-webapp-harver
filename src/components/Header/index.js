@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useDetectOutsideClick } from "../../utils/useDetectOutsideClick";
 
@@ -15,6 +15,7 @@ import {
   Menu,
   MenuItem,
   ProfileMenu,
+  Tab,
 } from "./styles";
 
 //ASSETS
@@ -38,6 +39,15 @@ const navMenu = [
 const storeName = "Loja do Rodrigo";
 
 export default function Header() {
+  const [isVisible, setIsVisible] = useState(true);
+
+  function toggleMenu() {
+    setIsVisible(!isVisible);
+    if (isVisible && window.innerWidth <= 680)
+      document.body.style.overflow = "hidden";
+    else document.body.style.overflow = "initial";
+  }
+
   const dropdownRef = useRef(null);
   const [isActive, setIsActive] = useDetectOutsideClick(dropdownRef, false);
 
@@ -45,8 +55,8 @@ export default function Header() {
 
   return (
     <>
-      <Container>
-        <MenuContainer>
+      <Container isVisible={isVisible}>
+        <MenuContainer isVisible={isVisible}>
           <MenuContent>
             <Logo>HARVER</Logo>
             <ProfileMenu>
@@ -71,10 +81,10 @@ export default function Header() {
             </Menu>
           </MenuContent>
         </MenuContainer>
-        <NavContainer>
-          <NavContent>
+        <NavContainer isVisible={isVisible}>
+          <NavContent isVisible={isVisible}>
+            <span>{storeName}</span>
             <ul>
-              <span>{storeName}</span>
               {navMenu.map((i) => {
                 return (
                   <Link key={i.index} to={i.url}>
@@ -84,6 +94,11 @@ export default function Header() {
               })}
             </ul>
           </NavContent>
+          <Tab isVisible={isVisible} onClick={toggleMenu}>
+            <div />
+            <div />
+            <div />
+          </Tab>
         </NavContainer>
       </Container>
     </>

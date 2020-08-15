@@ -12,16 +12,31 @@ export const Container = styled.div`
   border-radius: 4px;
   background: #f8f8fc;
   cursor: pointer;
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: row;
+  }
 `;
 
 export const Image = styled.img`
-  width: 238px;
+  width: 200px;
   border-radius: 4px;
+
+  @media only screen and (max-width: 768px) {
+    width: 80px;
+  }
 `;
 
 export const Description = styled.div`
-  width: 240px;
   padding: 8px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media only screen and (max-width: 768px) {
+    align-items: flex-start;
+    width: 100%;
+  }
 
   span {
     font: 700 16px Archivo;

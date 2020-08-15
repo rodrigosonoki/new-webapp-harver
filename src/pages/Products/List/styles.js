@@ -14,6 +14,6 @@ export const Content = styled.div`
 
 export const ProductList = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   grid-gap: 16px;
 `;

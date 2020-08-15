@@ -5,6 +5,17 @@ export const Container = styled.div`
   width: 100%;
   position: sticky;
   top: 0;
+
+  @media only screen and (max-width: 680px) {
+    /* <--FULL SCREEN--> */
+    background-color: ${({ isVisible }) => (isVisible ? "" : "#fff")};
+    justify-content: ${({ isVisible }) => (isVisible ? "" : "center")};
+    width: ${({ isVisible }) => (isVisible ? "" : "100vw")};
+    height: ${({ isVisible }) => (isVisible ? "" : "100vh")};
+    top: ${({ isVisible }) => (isVisible ? "" : "0")};
+    left: ${({ isVisible }) => (isVisible ? "" : "0")};
+    z-index: ${({ isVisible }) => (isVisible ? "" : "9999")};
+  }
 `;
 
 export const MenuContainer = styled.div`
@@ -19,6 +30,11 @@ export const MenuContainer = styled.div`
   @media only screen and (max-width: 768px) {
     height: 64px;
     transition: 0.3s;
+  }
+
+  @media only screen and (max-width: 680px) {
+    /* <--FULL SCREEN--> */
+    display: ${({ isVisible }) => (isVisible ? "" : "none")};
   }
 `;
 
@@ -162,9 +178,12 @@ export const NavContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: ${colors.background};
-  transition: 0.3s;
-  background: #fff;
+  background-color: #fff;
+
+  @media only screen and (max-width: 680px) {
+    /* <--FULL SCREEN--> */
+    height: ${({ isVisible }) => (isVisible ? "64px" : "100vh")};
+  }
 `;
 
 export const NavContent = styled.nav`
@@ -207,10 +226,72 @@ export const NavContent = styled.nav`
     text-transform: uppercase;
     font: 700 18px Archivo;
   }
+
+  @media only screen and (max-width: 680px) {
+    /* <--FULL SCREEN--> */
+
+    ul {
+      flex-direction: column;
+      display: ${({ isVisible }) => (isVisible ? "none" : "flex")};
+      z-index: ${({ isVisible }) => (isVisible ? "" : "9999")};
+      text-align: ${({ isVisible }) => (isVisible ? "" : "center")};
+      margin: ${({ isVisible }) => (isVisible ? "" : "auto")};
+      font-size: ${({ isVisible }) => (isVisible ? "" : "32px")};
+    }
+
+    span {
+      display: ${({ isVisible }) => (isVisible ? "" : "none")};
+    }
+  }
 `;
 
 export const NavItem = styled.li`
   width: 112px;
   display: flex;
   justify-content: center;
+`;
+
+export const Tab = styled.div`
+  @media (max-width: 680px) {
+    width: 40px;
+    height: 30px;
+    margin: 0 24px 0 0;
+    position: ${({ isVisible }) => (isVisible ? "" : "absolute")};
+    top: ${({ isVisible }) => (isVisible ? "" : "80px")};
+    right: ${({ isVisible }) => (isVisible ? "" : "-4px")};
+
+    div:nth-child(1) {
+      background-color: ${({ isVisible }) =>
+        isVisible ? "#303030" : "#303030"};
+      height: 5px;
+      width: 100%;
+      margin: 0 auto 6px;
+      transition-duration: 0.3s;
+      border-radius: 8px;
+      transform: ${({ isVisible }) =>
+        isVisible ? "" : "rotate(45deg) translate(7px, 7px)"};
+    }
+
+    div:nth-child(2) {
+      background-color: #303030;
+      height: 5px;
+      border-radius: 8px;
+      width: 100%;
+      margin: 0 auto 6px;
+      transition-duration: 0.3s;
+      opacity: ${({ isVisible }) => (isVisible ? "" : "0")};
+    }
+
+    div:nth-child(3) {
+      background-color: ${({ isVisible }) =>
+        isVisible ? "#303030" : "#303030"};
+      height: 5px;
+      border-radius: 8px;
+      width: 100%;
+      margin: 0 auto 6px;
+      transition-duration: 0.3s;
+      transform: ${({ isVisible }) =>
+        isVisible ? "" : "rotate(-45deg) translate(8px, -9px)"};
+    }
+  }
 `;

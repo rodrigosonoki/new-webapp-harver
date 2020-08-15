@@ -6,46 +6,28 @@ import Product from "../Product";
 //STYLES
 import { Container, Content, ProductList } from "./styles.js";
 
+//CONTEXTS
+import { useFilter } from "../../../store/useFilter";
+
 //TEMP DATA
 const products = [
   {
     id: 1,
-    name: "Camiseta de golfinho",
+    name: "Aaa",
     price: "R$49.99",
     image:
       "https://mockup-api.teespring.com/v3/image/WGs_HCKH5pEL8Gr_yp4LstbXjkw/480/560.jpg",
   },
   {
     id: 2,
-    name: "Camiseta de golfinho",
+    name: "Aab",
     price: "R$49.99",
     image:
       "https://mockup-api.teespring.com/v3/image/WGs_HCKH5pEL8Gr_yp4LstbXjkw/480/560.jpg",
   },
   {
     id: 3,
-    name: "Camiseta de golfinho",
-    price: "R$49.99",
-    image:
-      "https://mockup-api.teespring.com/v3/image/WGs_HCKH5pEL8Gr_yp4LstbXjkw/480/560.jpg",
-  },
-  {
-    id: 4,
-    name: "Camiseta de golfinho",
-    price: "R$49.99",
-    image:
-      "https://mockup-api.teespring.com/v3/image/WGs_HCKH5pEL8Gr_yp4LstbXjkw/480/560.jpg",
-  },
-  {
-    id: 5,
-    name: "Camiseta de golfinho",
-    price: "R$49.99",
-    image:
-      "https://mockup-api.teespring.com/v3/image/WGs_HCKH5pEL8Gr_yp4LstbXjkw/480/560.jpg",
-  },
-  {
-    id: 6,
-    name: "Camiseta de golfinho",
+    name: "Abb",
     price: "R$49.99",
     image:
       "https://mockup-api.teespring.com/v3/image/WGs_HCKH5pEL8Gr_yp4LstbXjkw/480/560.jpg",
@@ -53,11 +35,24 @@ const products = [
 ];
 
 export default function List() {
+  const { filter } = useFilter();
+
+  const filteredProducts = products
+    .map((i) => {
+      if (i.name.toLowerCase().includes(filter.toLowerCase())) {
+        return i;
+      }
+      return null;
+    })
+    .filter(function (item) {
+      return item != null;
+    });
+
   return (
     <Container>
       <Content>
         <ProductList>
-          {products.map((i) => {
+          {filteredProducts.map((i) => {
             return (
               <Product
                 productName={i.name}

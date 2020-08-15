@@ -5,7 +5,7 @@ import { Container } from "./styles.js";
 
 //GLOBAL COMPONENTS
 import Header from "../../components/Header";
-import SearchBar from "../../components/SearchBar";
+import SearchBar from "./SearchBar";
 
 //LOCAL COMPONENTS
 import List from "./List";

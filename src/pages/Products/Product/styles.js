@@ -11,6 +11,7 @@ export const Container = styled.div`
   border: 1px solid ${(props) => props.theme.colors.lineInWhite};
   border-radius: 4px;
   background: #f8f8fc;
+  cursor: pointer;
 `;
 
 export const Image = styled.img`

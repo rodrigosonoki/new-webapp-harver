@@ -6,11 +6,11 @@ import { Container, Content } from "./styles";
 //ASSETS
 import { search } from "../../assets/icons";
 
-export default function SearchBar(props) {
+export default function SearchBar({ placeholder }) {
   return (
     <Container>
       <Content>
-        <input placeholder={props.placeholder}></input>
+        <input placeholder={placeholder}></input>
         <button onClick={() => console}>
           <img src={search} alt="search icon" />
           Buscar

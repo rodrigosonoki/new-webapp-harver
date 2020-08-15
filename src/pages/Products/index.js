@@ -7,12 +7,15 @@ import { Container } from "./styles.js";
 import Header from "../../components/Header";
 import SearchBar from "../../components/SearchBar";
 
+//LOCAL COMPONENTS
+import List from "./List";
+
 export default function Products() {
   return (
     <Container>
       <Header />
-
-      <SearchBar />
+      <SearchBar placeholder="Digite o nome do produto..." />
+      <List />
     </Container>
   );
 }

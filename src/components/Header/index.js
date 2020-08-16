@@ -37,7 +37,7 @@ const navMenu = [
   { name: "Overview", index: 1, url: "/" },
   { name: "Produtos", index: 2, url: "/products" },
   { name: "Vendas", index: 3, url: "/orders" },
-  { name: "Usuários", index: 4, url: "/users" },
+  { name: "Minha Loja", index: 4, url: "/store" },
 ];
 
 const storeName = "Loja do Rodrigo";

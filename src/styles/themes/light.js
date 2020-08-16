@@ -28,5 +28,6 @@ export default {
     active: "#62AFDE",
     secondaryButton: "#FFF",
     secondaryButtonHover: "#EBEBEB",
+    unavailableBackground: "#d0ccd1",
   },
 };

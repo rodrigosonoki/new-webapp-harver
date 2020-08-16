@@ -6,7 +6,7 @@ export const Container = styled.div`
   position: sticky;
   top: 0;
 
-  @media only screen and (max-width: 680px) {
+  @media only screen and (max-width: 768px) {
     /* <--FULL SCREEN--> */
     background-color: ${({ isVisible }) => (isVisible ? "" : "#fff")};
     justify-content: ${({ isVisible }) => (isVisible ? "" : "center")};
@@ -32,7 +32,7 @@ export const MenuContainer = styled.div`
     transition: 0.3s;
   }
 
-  @media only screen and (max-width: 680px) {
+  @media only screen and (max-width: 768px) {
     /* <--FULL SCREEN--> */
     display: ${({ isVisible }) => (isVisible ? "" : "none")};
   }
@@ -180,7 +180,7 @@ export const NavContainer = styled.div`
   justify-content: center;
   background-color: #fff;
 
-  @media only screen and (max-width: 680px) {
+  @media only screen and (max-width: 768px) {
     /* <--FULL SCREEN--> */
     height: ${({ isVisible }) => (isVisible ? "64px" : "100vh")};
   }
@@ -191,7 +191,6 @@ export const NavContent = styled.nav`
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding: 0 24px 0 24px;
 
   ul {
@@ -227,7 +226,7 @@ export const NavContent = styled.nav`
     font: 700 18px Archivo;
   }
 
-  @media only screen and (max-width: 680px) {
+  @media only screen and (max-width: 768px) {
     /* <--FULL SCREEN--> */
 
     ul {
@@ -252,7 +251,7 @@ export const NavItem = styled.li`
 `;
 
 export const Tab = styled.div`
-  @media (max-width: 680px) {
+  @media (max-width: 768px) {
     width: 40px;
     height: 30px;
     margin: 0 24px 0 0;

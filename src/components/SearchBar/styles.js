@@ -25,6 +25,10 @@ export const Content = styled.div`
     background: #f8f8fc;
     padding: 0 8px;
 
+    ::placeholder {
+      color: rgba(0, 0, 0, 0.25);
+    }
+
     &:focus {
       outline: none;
       border: 1px solid ${(props) => props.theme.colors.active};

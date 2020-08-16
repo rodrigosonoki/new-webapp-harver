@@ -8,13 +8,16 @@ export const Container = styled.div`
   margin: 8px 0;
 `;
 
-export const Input = styled.input`
+export const TextArea = styled.textarea`
   max-width: ${(props) => props.maxWidth || "1200px"};
   width: ${(props) => props.width || "100%"};
   height: 48px;
   border: 1px solid ${(props) => props.theme.colors.lineInWhite};
   padding: 8px;
   border-radius: 4px;
+  resize: vertical;
+  min-height: 160px;
+  max-height: 400px;
 
   &:focus {
     outline: none;

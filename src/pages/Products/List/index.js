@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 //LOCAL COMPONENTS
 import Product from "../Product";
@@ -77,7 +77,15 @@ const products = [
 ];
 
 export default function List() {
-  const { filter } = useFilter();
+  const { filter, setFilter } = useFilter();
+
+  //RESET STATE WHEN MOUNTING COMPONENT
+  useEffect(() => {
+    const resetState = () => {
+      setFilter("");
+    };
+    resetState();
+  }, [setFilter]);
 
   const filteredProducts = products
     .map((i) => {
@@ -101,6 +109,7 @@ export default function List() {
                 productPrice={i.price}
                 key={i.id}
                 productImage={i.image}
+                productId={i.id}
               />
             );
           })}

@@ -6,7 +6,7 @@ import { Container, Image, Description } from "./styles";
 
 export default function Product(props) {
   return (
-    <Link>
+    <Link to={`/products/${props.productId}`}>
       <Container>
         <Image src={props.productImage} />
         <Description>

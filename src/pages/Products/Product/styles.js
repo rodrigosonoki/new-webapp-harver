@@ -12,6 +12,7 @@ export const Container = styled.div`
   border-radius: 4px;
   background: #f8f8fc;
   cursor: pointer;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 
   @media only screen and (max-width: 768px) {
     flex-direction: row;

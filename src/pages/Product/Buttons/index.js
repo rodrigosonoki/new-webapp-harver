@@ -19,7 +19,7 @@ export default function Buttons() {
       <Content>
         <div>
           <Link to="/products">
-            <Button label="Cancelar" handleClick={handleClick} />
+            <Button label="Voltar" handleClick={handleClick} />
           </Link>
           <Button primary label="Salvar alterações" handleClick={handleClick} />
         </div>

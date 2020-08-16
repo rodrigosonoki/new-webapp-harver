@@ -12,18 +12,21 @@ import Order from "../pages/Order";
 //CONTEXTS
 import FilterProvider from "../store/useFilter";
 import NavProvider from "../store/useNav";
+import UserProvider from "../store/useUser";
 
 const Routes = () => (
   <Switch>
     <NavProvider>
-      <Route path="/" exact={true} component={Home} />
-      <Route path="/users" exact={true} component={Users} />
-      <Route path="/products/:id" exact={true} component={Product} />
-      <Route path="/orders/:id" exact={true} component={Order} />
-      <FilterProvider>
-        <Route path="/orders" exact={true} component={Orders} />
-        <Route path="/products" exact={true} component={Products} />
-      </FilterProvider>
+      <UserProvider>
+        <Route path="/" exact={true} component={Home} />
+        <Route path="/users" exact={true} component={Users} />
+        <Route path="/products/:id" exact={true} component={Product} />
+        <Route path="/orders/:id" exact={true} component={Order} />
+        <FilterProvider>
+          <Route path="/orders" exact={true} component={Orders} />
+          <Route path="/products" exact={true} component={Products} />
+        </FilterProvider>
+      </UserProvider>
     </NavProvider>
   </Switch>
 );

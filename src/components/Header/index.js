@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDetectOutsideClick } from "../../utils/useDetectOutsideClick";
 
@@ -23,6 +23,7 @@ import { bell, circle, feedback, logout, user } from "../../assets/icons";
 
 //CONTEXTS
 import { useNav } from "../../store/useNav";
+import { useUser } from "../../store/useUser";
 
 //PROFILE MENU
 const profileMenu = [
@@ -45,6 +46,7 @@ const props = { color: "#303030", borderBottom: "2px solid #303030" };
 
 export default function Header() {
   const { nav, setNav } = useNav();
+  const { user } = useUser();
   const [isVisible, setIsVisible] = useState(true);
 
   function toggleMenu() {
@@ -59,6 +61,17 @@ export default function Header() {
 
   const toogleMenu = () => setIsActive(!isActive);
 
+  function handleSetNav() {
+    navMenu.map((i) => {
+      if (window.location.href.indexOf(i.url) > -1) setNav(i.index);
+      return i;
+    });
+  }
+
+  useEffect(() => {
+    handleSetNav();
+  });
+
   return (
     <>
       <Container isVisible={isVisible}>
@@ -68,7 +81,7 @@ export default function Header() {
             <ProfileMenu>
               <img src={bell} alt="notifications" />
               <Profile onClick={toogleMenu}>
-                <span>rodrigo@harver.com.br</span>
+                <span>{user.email}</span>
                 <img src={circle} alt="profile" />
               </Profile>
             </ProfileMenu>
@@ -93,11 +106,7 @@ export default function Header() {
             <ul>
               {navMenu.map((i) => {
                 return (
-                  <Link
-                    key={i.index}
-                    to={i.url}
-                    onClick={() => setNav(i.index)}
-                  >
+                  <Link key={i.index} to={i.url}>
                     {(() => {
                       if (i.index === nav) {
                         return <NavItem style={props}>{i.name}</NavItem>;

@@ -7,13 +7,17 @@ import Header from "../../components/Header";
 import Details from "./Details";
 
 //STYLES
-import { Container } from "./styles";
+import { Container, Content } from "./styles";
+import BackButton from "../../components/BackButton";
 
 export default function Order() {
   return (
     <Container>
       <Header />
-      <Details />
+      <Content>
+        <BackButton link="/orders" />
+        <Details />
+      </Content>
     </Container>
   );
 }

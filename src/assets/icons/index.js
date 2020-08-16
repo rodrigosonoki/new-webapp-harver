@@ -6,5 +6,6 @@ import store from "./store.svg";
 import user from "./user.svg";
 import search from "./search.svg";
 import more from "./more.svg";
+import back from "./back.svg";
 
-export { bell, circle, feedback, user, store, logout, search, more };
+export { bell, circle, feedback, user, store, logout, search, more, back };

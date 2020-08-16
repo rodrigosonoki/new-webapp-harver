@@ -172,7 +172,9 @@ export default function Address() {
               <Input name="state" defaultValue={item.state} readOnly />
             </label>
           </div>
-          <Button primary onClick={saveAddress} label={buttonText} />
+          <div>
+            <Button primary onClick={saveAddress} label={buttonText} />
+          </div>
         </Content>
       </Section>
     </Container>

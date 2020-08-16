@@ -36,4 +36,8 @@ export const Content = styled.form`
       width: 10%;
     }
   }
+
+  div:nth-child(4) {
+    justify-content: flex-end;
+  }
 `;

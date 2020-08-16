@@ -4,20 +4,16 @@ import React from "react";
 import Header from "../../components/Header";
 
 //LOCAL COMPONENTS
-import Description from "./Description";
-import Photo from "./Photo";
-import Buttons from "./Buttons";
+import Details from "./Details";
 
 //STYLES
 import { Container } from "./styles";
 
-export default function Product() {
+export default function Order() {
   return (
     <Container>
       <Header />
-      <Photo />
-      <Description />
-      <Buttons />
+      <Details />
     </Container>
   );
 }

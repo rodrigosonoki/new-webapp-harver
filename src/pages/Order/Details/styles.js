@@ -1,16 +1,19 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 100%;
   display: flex;
+  width: 100%;
   justify-content: center;
-  align-items: center;
-  padding: 0 24px;
+  padding: 24px;
 `;
 
 export const Content = styled.div`
-  width: 100%;
   max-width: 1200px;
+  width: 100%;
+  border: 1px solid ${(props) => props.theme.colors.lineInWhite};
+  padding: 16px;
+  border-radius: 4px;
+  background: #fff;
 `;
 
 export const Table = styled.table`
@@ -34,13 +37,20 @@ export const Table = styled.table`
     padding: 16px 16px;
   }
 
-  tr td {
-    width: 25%;
+  tr td:nth-child(1) {
+    width: 10%;
+  }
+
+  tr td:not(:first-child) {
+    width: 22.5%;
+  }
+
+  tr td img {
+    height: 64px;
   }
 
   tbody tr {
     border-bottom: 1px solid #ddd;
-    cursor: pointer;
     transition: 0.2s;
 
     &:hover {
@@ -56,5 +66,20 @@ export const Table = styled.table`
       background: #e4e4e4;
       transition: 0.2s;
     }
+  }
+
+  tbody tr:nth-last-child(-n + 3) {
+    background-color: #ffffff;
+    border-bottom: none;
+    cursor: default;
+
+    &:hover {
+      background-color: #ffffff;
+    }
+  }
+
+  tbody tr:last-child {
+    text-transform: uppercase;
+    font: 700 16px Archivo;
   }
 `;

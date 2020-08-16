@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useHistory } from "react-router-dom";
 
 //STYLES
 import { Container, Content, Table } from "./styles";
@@ -35,6 +36,7 @@ const orders = [
 
 export default function Order() {
   const { filter, setFilter } = useFilter();
+  const history = useHistory();
 
   //RESET STATE WHEN MOUNTING COMPONENT
   useEffect(() => {
@@ -74,11 +76,11 @@ export default function Order() {
           <tbody>
             {filteredOrders.map((i) => {
               return (
-                <tr key={i.id}>
-                  <td>{i.id}</td>
-                  <td>{i.date}</td>
-                  <td>{i.total}</td>
-                  <td>{i.status}</td>
+                <tr onClick={() => history.push(`/orders/${i.id}`)} key={i.id}>
+                  <td to={`/orders/${i.id}`}>{i.id}</td>
+                  <td to={`/orders/${i.id}`}>{i.date}</td>
+                  <td to={`/orders/${i.id}`}>{i.total}</td>
+                  <td to={`/orders/${i.id}`}>{i.status}</td>
                 </tr>
               );
             })}

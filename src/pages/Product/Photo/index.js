@@ -7,8 +7,18 @@ import Heading from "../Heading";
 import { Container, Content, ImageList } from "./styles";
 
 const photos = [
-  "https://mockup-api.teespring.com/v3/image/WGs_HCKH5pEL8Gr_yp4LstbXjkw/480/560.jpg",
-  "https://mockup-api.teespring.com/v3/image/WGs_HCKH5pEL8Gr_yp4LstbXjkw/480/560.jpg",
+  {
+    url:
+      "https://mockup-api.teespring.com/v3/image/WGs_HCKH5pEL8Gr_yp4LstbXjkw/480/560.jpg",
+    alt: "dolphin mask",
+    index: 1,
+  },
+  {
+    url:
+      "https://mockup-api.teespring.com/v3/image/WGs_HCKH5pEL8Gr_yp4LstbXjkw/480/560.jpg",
+    alt: "dolphin mask",
+    index: 1,
+  },
 ];
 
 export default function Description() {
@@ -17,8 +27,8 @@ export default function Description() {
       <Content>
         <Heading text="Imagens do seu produto" />
         <ImageList>
-          {photos.map((i, index) => {
-            return <img src={i} key="index" />;
+          {photos.map((i) => {
+            return <img src={i.url} alt={i.alt} key={i.index} />;
           })}
         </ImageList>
       </Content>

@@ -21,6 +21,9 @@ import {
 //ASSETS
 import { bell, circle, feedback, logout, user } from "../../assets/icons";
 
+//CONTEXTS
+import { useNav } from "../../store/useNav";
+
 //PROFILE MENU
 const profileMenu = [
   { text: "Meu perfil", img: user, imgAlt: "profile" },
@@ -38,7 +41,10 @@ const navMenu = [
 
 const storeName = "Loja do Rodrigo";
 
+const props = { color: "#303030", borderBottom: "2px solid #303030" };
+
 export default function Header() {
+  const { nav, setNav } = useNav();
   const [isVisible, setIsVisible] = useState(true);
 
   function toggleMenu() {
@@ -87,8 +93,18 @@ export default function Header() {
             <ul>
               {navMenu.map((i) => {
                 return (
-                  <Link key={i.index} to={i.url}>
-                    <NavItem>{i.name}</NavItem>
+                  <Link
+                    key={i.index}
+                    to={i.url}
+                    onClick={() => setNav(i.index)}
+                  >
+                    {(() => {
+                      if (i.index === nav) {
+                        return <NavItem style={props}>{i.name}</NavItem>;
+                      } else {
+                        return <NavItem>{i.name}</NavItem>;
+                      }
+                    })()}
                   </Link>
                 );
               })}

@@ -1,7 +1,7 @@
 import React from "react";
 
 //STYLES
-import { Container, Content, Image, Fields } from "./styles.js";
+import { Container, Content, Fields } from "./styles.js";
 
 //GLOBAL COMPONENTS
 import Section from "../../../components/Section";
@@ -13,12 +13,6 @@ export default function Personal() {
     <Container>
       <Section label="Perfil">
         <Content>
-          <Image>
-            <img
-              src="https://www.w3schools.com/howto/img_avatar.png"
-              alt="profile"
-            />
-          </Image>
           <Fields>
             <div>
               <label>

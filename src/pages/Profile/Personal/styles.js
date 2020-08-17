@@ -1,19 +1,15 @@
 import styled from "styled-components";
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  width: 100%;
+  max-width: 1248px;
+`;
 
 export const Content = styled.div`
+  width: 100%;
   display: flex;
   padding: 0 0 8px 0;
   align-items: center;
-`;
-
-export const Image = styled.div`
-  img {
-    height: 160px;
-    border-radius: 160px;
-    margin-right: 24px;
-  }
 `;
 
 export const Fields = styled.form`

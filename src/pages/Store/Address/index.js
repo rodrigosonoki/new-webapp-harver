@@ -9,11 +9,11 @@ import Input from "../../../components/Input";
 import Button from "../../../components/Button";
 
 const data = {
-  zipCode: "05356000",
-  street: "Rua Conde",
-  number: "123",
-  complement: "73A",
-  neighborhood: "Perdizes",
+  zipCode: "05427010",
+  street: "Rua Fernão Dias",
+  number: "323",
+  complement: "42",
+  neighborhood: "Pinheiros",
   city: "São Paulo",
   state: "SP",
 };
@@ -36,7 +36,7 @@ export default function Address() {
   const [readOnly, setReadyOnly] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => setItem(data), 2000);
+    setItem(data);
   }, []);
 
   const getAddress = async () => {
@@ -59,16 +59,13 @@ export default function Address() {
     e.preventDefault();
     setButtonText("Salvando...");
 
-    setTimeout(() => {
-      setButtonText("Salvar");
-      setReadyOnly(true);
-      console.log(item);
-    }, 2000);
+    setButtonText("Salvar");
+    setReadyOnly(true);
   };
 
   return (
     <Container>
-      <Section label="Endereço">
+      <Section label="Endereço de cobrança">
         <Content>
           <div>
             <label>

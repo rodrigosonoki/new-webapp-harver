@@ -8,6 +8,7 @@ import Orders from "../pages/Orders";
 import Store from "../pages/Store";
 import Product from "../pages/Product";
 import Order from "../pages/Order";
+import Profile from "../pages/Profile";
 
 //CONTEXTS
 import FilterProvider from "../store/useFilter";
@@ -19,9 +20,10 @@ const Routes = () => (
     <NavProvider>
       <UserProvider>
         <Route path="/" exact={true} component={Home} />
-        <Route path="/store" exact={true} component={Store} />
         <Route path="/products/:id" exact={true} component={Product} />
         <Route path="/orders/:id" exact={true} component={Order} />
+        <Route path="/store" exact={true} component={Store} />
+        <Route path="/account" exact={true} component={Profile} />
         <FilterProvider>
           <Route path="/orders" exact={true} component={Orders} />
           <Route path="/products" exact={true} component={Products} />

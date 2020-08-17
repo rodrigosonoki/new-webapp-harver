@@ -27,7 +27,7 @@ import { useUser } from "../../store/useUser";
 
 //PROFILE MENU
 const profileMenu = [
-  { text: "Meu perfil", img: user, imgAlt: "profile" },
+  { text: "Meu perfil", img: user, imgAlt: "profile", url: "/account" },
   { text: "Faça sua sugestão", img: feedback, altImg: "feedback" },
   { text: "Sair", img: logout, altImg: "logout" },
 ];
@@ -90,10 +90,12 @@ export default function Header() {
               <ul>
                 {profileMenu.map((i, index) => {
                   return (
-                    <MenuItem key={index}>
-                      <span>{i.text}</span>
-                      <img src={i.img} alt={i.imgAlt} />
-                    </MenuItem>
+                    <Link to={i.url}>
+                      <MenuItem key={index}>
+                        <span>{i.text}</span>
+                        <img src={i.img} alt={i.imgAlt} />
+                      </MenuItem>
+                    </Link>
                   );
                 })}
               </ul>

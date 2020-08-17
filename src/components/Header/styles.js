@@ -121,6 +121,10 @@ export const Menu = styled.nav`
   transition: visibility 0s, opacity 0.1s linear;
   z-index: 2;
 
+  a:visited {
+    color: #fff;
+  }
+
   ${({ isActive }) =>
     isActive &&
     css`

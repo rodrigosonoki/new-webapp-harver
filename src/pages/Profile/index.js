@@ -7,16 +7,14 @@ import { Container, Content } from "./styles.js";
 import Header from "../../components/Header";
 
 //LOCAL COMPONENTS
-import Address from "./Address";
-import Bank from "./Bank";
+import Personal from "./Personal";
 
-export default function Store() {
+export default function Profile() {
   return (
     <Container>
       <Header />
       <Content>
-        <Address />
-        <Bank />
+        <Personal />
       </Content>
     </Container>
   );

@@ -12,33 +12,17 @@ export const Content = styled.form`
     margin-bottom: 16px;
   }
 
+  div:nth-child(2) {
+    label {
+      margin-right: 16px;
+    }
+  }
+
   label {
     width: 100%;
   }
 
-  label:not(:last-child) {
-    margin-right: 16px;
-  }
-
-  div:nth-child(1) {
-    label:nth-child(1) {
-      width: 20%;
-    }
-  }
-
-  div:nth-child(2) {
-    label:nth-child(1) {
-      width: 15%;
-    }
-  }
-
   div:nth-child(3) {
-    label:nth-child(3) {
-      width: 10%;
-    }
-  }
-
-  div:nth-child(4) {
     justify-content: flex-end;
   }
 `;

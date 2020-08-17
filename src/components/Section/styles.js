@@ -12,4 +12,5 @@ export const Content = styled.div``;
 
 export const Heading = styled.div`
   font: 700 24px Archivo;
+  padding: 16px 0;
 `;

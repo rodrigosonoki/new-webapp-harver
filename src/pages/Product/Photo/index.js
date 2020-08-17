@@ -17,7 +17,7 @@ const photos = [
     url:
       "https://mockup-api.teespring.com/v3/image/WGs_HCKH5pEL8Gr_yp4LstbXjkw/480/560.jpg",
     alt: "dolphin mask",
-    index: 1,
+    index: 2,
   },
 ];
 

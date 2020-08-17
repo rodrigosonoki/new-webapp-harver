@@ -20,7 +20,7 @@ export default function SearchBar({ placeholder }) {
     <Container>
       <Content>
         <input placeholder={placeholder} onChange={handleOnChange}></input>
-        <button onClick={() => console}>
+        <button>
           <img src={search} alt="search icon" />
           Buscar
         </button>
